@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/pg": "^8.11.11",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "concurrently": "^8.2.2",
@@ -39,6 +40,8 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

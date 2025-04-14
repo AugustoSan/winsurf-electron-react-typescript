@@ -27,7 +27,7 @@
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-      "program": "${workspaceFolder}/dist/main.js",
+      "program": "${workspaceFolder}/dist/main/main.js",
       "preLaunchTask": "Start Dev Server",
       "cwd": "${workspaceFolder}",
       "env": {
