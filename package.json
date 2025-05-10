@@ -8,7 +8,8 @@
     "dev": "concurrently -k \"cross-env BROWSER=none npm run watch:react\" \"wait-on -t 30000 tcp:3000 && npm run watch:electron\" \"wait-on -t 30000 tcp:3000 && cross-env NODE_ENV=development electron .\"",
     "watch:electron": "tsc -p tsconfig.electron.json -w",
     "watch:react": "webpack serve --config webpack.config.js",
-    "build": "tsc -p tsconfig.electron.json && webpack --config webpack.config.js"
+    "build": "tsc -p tsconfig.electron.json && webpack --config webpack.config.js",
+    "dist:win": "electron-builder --win --x64"
   },
   "keywords": [
     "electron",
@@ -26,6 +27,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.10.0",
     "electron": "^28.2.3",
+    "electron-builder": "^26.0.12",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
@@ -46,5 +48,25 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.2.0"
+  },
+  "build": {
+    "appId": "com.augusto.san",
+    "productName": "GestionVentas",
+    "directories": {
+      "output": "dist_installer"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "assets/icono-win.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }

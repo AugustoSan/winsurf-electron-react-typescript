@@ -215,3 +215,5 @@ replay_pid*
 /test/version_tmp/
 /tmp/
 .byebug_history
+
+dist_installer/*
