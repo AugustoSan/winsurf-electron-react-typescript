@@ -16,6 +16,12 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"],
   },
 
+  performance: {
+    hints: "warning", // 'error' para tratarlo como fallo, o false para desactivar
+    maxAssetSize: 500 * 1024, // bytes; aquí 500 KiB
+    maxEntrypointSize: 500 * 1024, // idem
+  },
+
   module: {
     rules: [
       {

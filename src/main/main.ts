@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, session } from "electron";
 import * as path from "path";
 import * as fs from "fs";
 
@@ -18,6 +18,17 @@ function createWindow() {
   // Si NODE_ENV no está definido, lo forzamos a producción
   process.env.NODE_ENV = process.env.NODE_ENV || "production";
   const isDev = process.env.NODE_ENV === "development";
+
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    const responseHeaders = {
+      ...details.responseHeaders,
+      "Content-Security-Policy": [
+        // mantenemos todo lo que ya tenías y añadimos style-src
+        "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';",
+      ],
+    };
+    callback({ responseHeaders });
+  });
 
   if (isDev) {
     // Carga la URL del webpack-dev-server

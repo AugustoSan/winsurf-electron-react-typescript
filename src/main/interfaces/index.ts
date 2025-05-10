@@ -1,6 +1,6 @@
-export { IFiltersGraphics, IGraphicResponse } from "./IGraphics";
+export type { IFiltersGraphics, IGraphicResponse } from "./IGraphics";
 
-export {
+export type {
   IClient,
   IDataAddClient,
   IDataAddAddress,
@@ -11,16 +11,16 @@ export {
   IDataRequestSearchWithStringAndPagination,
 } from "./IClients";
 
-export {
+export type {
   IPagination,
   IPaginationForSlides,
   IDataRequestFindById,
   IDataPagination,
 } from "./Pagination";
 
-export { IPago, IAddPago } from "./IPagos";
+export type { IPago, IAddPago } from "./IPagos";
 
-export {
+export type {
   IDataUpdateProduct,
   IDataFindPricesProduct,
   IPriceProduct,
@@ -29,7 +29,7 @@ export {
   IProductoGraphics,
 } from "./IProducts";
 
-export {
+export type {
   IDataAddVentaProductos,
   IDataAddVenta,
   IVentasProductos,
