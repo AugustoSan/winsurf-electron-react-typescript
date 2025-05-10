@@ -17,7 +17,8 @@
     "typescript",
     "dashboard"
   ],
-  "author": "",
+  "author": "Augusto San",
+  "website": "https://github.com/AugustoSan",
   "license": "ISC",
   "devDependencies": {
     "@types/pg": "^8.11.11",
